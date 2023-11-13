@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "moduleResolution": "Node",
+    "baseUrl": "./",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "strict": true,
+    "strictNullChecks": true
+  },
+  "ts-node": {
+    "transpileOnly": true
+  }
+}
