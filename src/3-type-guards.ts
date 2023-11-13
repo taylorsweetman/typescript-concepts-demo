@@ -52,6 +52,7 @@ const getLatAndLong = (maybePlace: unknown): LatAndLongResult => {
     return null;
   }
 
+  // notice that if you hover over maybePlace, it is now a Place type
   const { latitude, longitude } = maybePlace;
   return { latitude, longitude };
 };
