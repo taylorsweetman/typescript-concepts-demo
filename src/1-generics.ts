@@ -29,6 +29,17 @@ const main = async () => {
   );
   const { activity, type } = activityFromAPI;
   console.log({ activity, type });
+  console.log('---');
+
+  // you can also pass multiple generic types
+  const getDataOrError = <T, E>(data: T, error: E): T | E =>
+    Math.random() > 0.5 ? data : error;
+
+  new Array(5)
+    .fill(null)
+    .forEach(() =>
+      console.log(getDataOrError<string, null>('This is data', null))
+    );
 };
 
 main();
