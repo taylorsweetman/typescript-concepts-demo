@@ -65,4 +65,4 @@ console.log('---');
 const piiRedacted: Omit<Person, 'address' | 'name'>[] = fullPeopleRecords.map(
   ({ age, favoriteColour }) => ({ age, favoriteColour })
 );
-console.log({ piiRedactedPeople: piiRedacted });
+console.log({ piiRedacted });

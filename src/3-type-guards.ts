@@ -49,10 +49,12 @@ type LatAndLongResult = {
 
 const getLatAndLong = (maybePlace: unknown): LatAndLongResult => {
   if (!isPlace(maybePlace)) {
+    // notice that if you hover over maybePlace, it is still an unknown type since our type guard couldn't narrow it
+    console.log(`${maybePlace} is not a place`);
     return null;
   }
 
-  // notice that if you hover over maybePlace, it is now a Place type
+  // notice that if you hover over maybePlace, it is now a Place type. The magic of type guards!
   const { latitude, longitude } = maybePlace;
   return { latitude, longitude };
 };

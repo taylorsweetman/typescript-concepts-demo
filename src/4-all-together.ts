@@ -18,7 +18,7 @@ const apiFetcher = async <T>(minPrice: number): Promise<Maybe<T>> => {
     await axios.get(`http://www.boredapi.com/api/activity?minprice=${minPrice}`)
   )?.data;
 
-  if (respData == null || respData.error) {
+  if (respData == null || respData?.error) {
     return null;
   }
 
