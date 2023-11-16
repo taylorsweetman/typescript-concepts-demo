@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Activity } from './1-generics';
+import { log } from './x-log-util';
 
 // Generics
 type Maybe<T> = T | null;
@@ -37,11 +38,9 @@ const main = async () => {
     {} as ActivityMap
   );
 
-  console.log({ maybeActivities });
-  console.log('---');
-  console.log({ activities });
-  console.log('---');
-  console.log({ activityMap });
+  log(1, { maybeActivities });
+  log(2, { activities });
+  log(3, { activityMap });
 };
 
 main();

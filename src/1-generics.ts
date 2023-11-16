@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { log } from './x-log-util';
 
 // you've probably seen something like this before
 const numbers: Array<Number> = [1, 2, 3];
@@ -28,8 +29,7 @@ const main = async () => {
     'http://www.boredapi.com/api/activity'
   );
   const { activity, type } = activityFromAPI;
-  console.log({ activity, type });
-  console.log('---');
+  log(1, { activity, type });
 
   // you can also pass multiple generic types
   const getDataOrError = <T, E>(data: T, error: E): T | E =>
@@ -37,9 +37,7 @@ const main = async () => {
 
   new Array(5)
     .fill(null)
-    .forEach(() =>
-      console.log(getDataOrError<string, null>('This is data', null))
-    );
+    .forEach(() => log(2, getDataOrError<string, null>('This is data', null)));
 };
 
 main();

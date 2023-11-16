@@ -1,3 +1,5 @@
+import { log } from './x-log-util';
+
 type Person = {
   age: number;
   address: string;
@@ -36,8 +38,7 @@ const fullPeopleRecords: Required<Person>[] = Object.entries(personMap).map(
     ...person,
   })
 );
-console.log({ fullPeopleRecords });
-console.log('---');
+log(1, { fullPeopleRecords });
 
 // Pick -> WARNING think of | and & in set theory
 const justNamesAndAges: Pick<Person, 'name' | 'age'>[] = fullPeopleRecords.map(
@@ -46,8 +47,7 @@ const justNamesAndAges: Pick<Person, 'name' | 'age'>[] = fullPeopleRecords.map(
     age,
   })
 );
-console.log({ justNamesAndAges });
-console.log('---');
+log(2, { justNamesAndAges });
 
 // Pick example 2 -> demonstrate & usage
 const namesOrAges: Pick<Person, 'name' & 'age'>[] = fullPeopleRecords.map(
@@ -58,11 +58,10 @@ const namesOrAges: Pick<Person, 'name' & 'age'>[] = fullPeopleRecords.map(
     return { age };
   }
 );
-console.log({ namesOrAges });
-console.log('---');
+log(3, { namesOrAges });
 
 // Omit -> WARNING think of | and & in set theory
 const piiRedacted: Omit<Person, 'address' | 'name'>[] = fullPeopleRecords.map(
   ({ age, favoriteColour }) => ({ age, favoriteColour })
 );
-console.log({ piiRedacted });
+log(4, { piiRedacted });
